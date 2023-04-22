@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://7xxjabhfkahu"]
 
-[ext_resource type="PackedScene" uid="uid://bbjv8y254fynb" path="res://character.tscn" id="1_aq13s"]
+[ext_resource type="PackedScene" uid="uid://b2rm4tmnv50bp" path="res://player.tscn" id="1_liw1t"]
 [ext_resource type="PackedScene" uid="uid://bn7dqyt6wene8" path="res://DynamicCamera.tscn" id="2_r15pv"]
 
 [node name="Test_Game" type="Node2D"]
 
-[node name="Node2D" parent="." instance=ExtResource("1_aq13s")]
-position = Vector2(12, 23)
+[node name="Player" parent="." instance=ExtResource("1_liw1t")]
 
-[node name="Dynamic Camera" parent="Node2D" instance=ExtResource("2_r15pv")]
+[node name="Dynamic Camera" parent="Player" instance=ExtResource("2_r15pv")]
+position = Vector2(12, 23)
