@@ -8,4 +8,5 @@
 [node name="Node2D" parent="." instance=ExtResource("1_aq13s")]
 position = Vector2(12, 23)
 
-[node name="Camera2D" parent="Node2D" instance=ExtResource("2_r15pv")]
+[node name="Camera + arrow" parent="Node2D" instance=ExtResource("2_r15pv")]
+position = Vector2(-12, -23)
