@@ -5,5 +5,5 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(395, 185)
+position = Vector2(0, -2)
 texture = ExtResource("1_ccrmn")

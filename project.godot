@@ -11,5 +11,6 @@ config_version=5
 [application]
 
 config/name="bees"
+run/main_scene="res://Test_Game.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
