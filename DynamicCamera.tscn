@@ -1,5 +1,3 @@
 [gd_scene format=3 uid="uid://bn7dqyt6wene8"]
 
-[node name="DynamicCamera" type="Node2D"]
-
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D"]
