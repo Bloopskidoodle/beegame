@@ -14,3 +14,7 @@ config/name="bees"
 run/main_scene="res://Test_Game.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+mouse_cursor/custom_image="res://cursor.png"

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://DynamicCamera.gd" id="1_waqh4"]
 
-[node name="Camera + arrow" type="Node2D"]
+[node name="Dynamic Camera" type="Node2D"]
 
 [node name="DynamicCamera" type="Camera2D" parent="."]
 position_smoothing_enabled = true
