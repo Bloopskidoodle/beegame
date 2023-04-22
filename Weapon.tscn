@@ -6,6 +6,7 @@
 [node name="Weapon" type="Node2D"]
 
 [node name="Item" type="Sprite2D" parent="."]
+z_index = 1
 scale = Vector2(9.60497, 9.60497)
 texture = ExtResource("1_7r2pa")
 offset = Vector2(24, 0)
