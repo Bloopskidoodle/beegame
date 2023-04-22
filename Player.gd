@@ -1,33 +1,35 @@
 extends CharacterBody2D
 
-@export var speed: float = 200
-@export var acceleration: float = 2000
-var friction: float = acceleration / speed
+@export var speed: float = 400
+@export var acceleration: float = 1500
+@export var friction: float = 600
 
-func _process(delta: float) -> void:
-	apply_traction(delta)
-	apply_friction(delta)
+var input = Vector2.ZERO
 
-func _physics_process(delta: float) -> void:
+func _physics_process(delta):
+	player_movement(delta)
+	
+func get_input():
+	input.x = int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))  
+	input.y = int(Input.is_action_pressed("move_down")) - int(Input.is_action_pressed("move_up"))
+	
+	print(input.normalized())
+	return input.normalized()
+	
+func player_movement(delta):
+	input = get_input()
+	
+	if input == Vector2.ZERO:
+		#slows player
+		
+		if velocity.length() > (friction * delta):
+			velocity -= velocity.normalized() * (friction * delta)
+		else:
+			velocity = Vector2.ZERO
+	else:
+		#speeds player
+		
+		velocity += (input * acceleration* delta)
+		velocity = velocity.limit_length(speed)
+		
 	move_and_slide()
-	
-func  apply_traction(delta: float) -> void:
-	var traction: Vector2 = Vector2()
-	
-	if Input.is_action_pressed("move_up"):
-		traction.y -= 1
-	if Input.is_action_pressed("move_down"):
-		traction.y = 1
-	if Input.is_action_pressed("move_left"):
-		traction.x -= 1
-	if Input.is_action_pressed("move_right"):
-		traction.x = 1
-	
-	#print(traction)
-	traction = traction.normalized()
-	#print(traction)
-	
-	velocity += traction * acceleration * delta
-	
-func apply_friction(delta: float) -> void:
-	velocity -= velocity * friction * delta
