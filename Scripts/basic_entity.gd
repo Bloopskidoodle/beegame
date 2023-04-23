@@ -49,6 +49,8 @@ func change_health(num: int):
 		
 		health_depleted.emit()
 		death()
+	
+	print(health)
 		
 func death():
 	print("You are dead!!!!")

@@ -1,15 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://b62i51vu658xw"]
+[gd_scene load_steps=5 format=3 uid="uid://dvj7yk82gx11u"]
 
-[ext_resource type="PackedScene" uid="uid://bpbdbfu62rtwp" path="res://Enemy/basic_entity.tscn" id="1_7kups"]
-[ext_resource type="Script" path="res://Enemy/enemy_base.gd" id="2_ledsb"]
+[ext_resource type="PackedScene" uid="uid://cueunlnyad8v0" path="res://Enemy/basic_entity.tscn" id="1_7kups"]
+[ext_resource type="Script" path="res://Scripts/enemy_base.gd" id="2_aak3e"]
 [ext_resource type="Texture2D" uid="uid://1xkd322uvvxb" path="res://icon.svg" id="3_unn52"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eb8gb"]
 radius = 46.0
 height = 124.0
 
-[node name="EnemyBase" instance=ExtResource("1_7kups")]
-script = ExtResource("2_ledsb")
+[node name="EnemyBase" groups=["enemy"] instance=ExtResource("1_7kups")]
+collision_layer = 3
+script = ExtResource("2_aak3e")
 speed = 1000.0
 acceleration = 2000.0
 
