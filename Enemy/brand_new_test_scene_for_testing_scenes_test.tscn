@@ -1,3 +1,24 @@
-[gd_scene format=3 uid="uid://cnns1wnty2bom"]
+[gd_scene load_steps=3 format=3 uid="uid://cnns1wnty2bom"]
+
+[ext_resource type="PackedScene" uid="uid://p10w4r56abf0" path="res://Enemy/new_player.tscn" id="1_eri6h"]
+[ext_resource type="PackedScene" uid="uid://dvj7yk82gx11u" path="res://Enemy/enemy_base.tscn" id="2_n1v4q"]
 
 [node name="BrandNewTestSceneForTestingScenesTest" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.4, 0.4)
+
+[node name="NewPlayer" parent="." groups=["players"] instance=ExtResource("1_eri6h")]
+position = Vector2(-170, 60)
+
+[node name="EnemyBase" parent="." instance=ExtResource("2_n1v4q")]
+position = Vector2(172, -157)
+
+[node name="EnemyBase2" parent="." instance=ExtResource("2_n1v4q")]
+position = Vector2(-1146, -476)
+
+[node name="EnemyBase3" parent="." instance=ExtResource("2_n1v4q")]
+position = Vector2(497, 372)
+
+[node name="EnemyBase4" parent="." instance=ExtResource("2_n1v4q")]
+position = Vector2(-1217, 326)
