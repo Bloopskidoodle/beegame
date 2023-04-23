@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://7xxjabhfkahu"]
 
-[ext_resource type="PackedScene" uid="uid://b2rm4tmnv50bp" path="res://player.tscn" id="1_liw1t"]
+[ext_resource type="PackedScene" uid="uid://b4oa7rbayrsut" path="res://player.tscn" id="1_liw1t"]
 [ext_resource type="PackedScene" uid="uid://bn7dqyt6wene8" path="res://DynamicCamera.tscn" id="2_r15pv"]
 [ext_resource type="PackedScene" uid="uid://6qo7l8ckesk" path="res://Weapon.tscn" id="3_yheao"]
 [ext_resource type="TileSet" uid="uid://curlmb4tomuo5" path="res://Tilemap.tres" id="5_500sr"]
