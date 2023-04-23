@@ -46,9 +46,8 @@ script = ExtResource("1_if4mn")
 
 [node name="Item" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(61, 0.999995)
+position = Vector2(16, 2)
 rotation = 0.581554
-scale = Vector2(5, 5)
 texture = ExtResource("2_t8ypa")
 offset = Vector2(-6.0384, -6.53479)
 script = ExtResource("2_53b2b")

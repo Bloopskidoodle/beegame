@@ -12,7 +12,6 @@ y_sort_enabled = true
 [node name="Player" parent="." instance=ExtResource("1_liw1t")]
 
 [node name="Dynamic Camera" parent="Player" instance=ExtResource("2_r15pv")]
-position = Vector2(12, 23)
 
 [node name="Weapon" parent="Player" instance=ExtResource("3_yheao")]
 position = Vector2(2.70129, 3.86743)
