@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvj7yk82gx11u"]
+[gd_scene load_steps=7 format=3 uid="uid://dvj7yk82gx11u"]
 
 [ext_resource type="PackedScene" uid="uid://cueunlnyad8v0" path="res://Enemy/basic_entity.tscn" id="1_7kups"]
 [ext_resource type="Script" path="res://Scripts/enemy_base.gd" id="2_aak3e"]
@@ -8,11 +8,19 @@
 radius = 46.0
 height = 124.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ogx0f"]
+radius = 1770.15
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s1v48"]
+radius = 244.845
+
 [node name="EnemyBase" groups=["enemy"] instance=ExtResource("1_7kups")]
-collision_layer = 3
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("2_aak3e")
-speed = 1000.0
-acceleration = 2000.0
+speed = 600.0
+acceleration = 1000.0
+friction = 100.0
 
 [node name="Icon" type="Sprite2D" parent="." index="0"]
 scale = Vector2(0.726563, 1)
@@ -20,3 +28,19 @@ texture = ExtResource("3_unn52")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 shape = SubResource("CapsuleShape2D_eb8gb")
+
+[node name="Area2D" type="Area2D" parent="." index="2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_ogx0f")
+
+[node name="SafeSpace" type="Area2D" parent="." index="3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SafeSpace" index="0"]
+shape = SubResource("CircleShape2D_s1v48")
+debug_color = Color(0.984314, 0, 0.352941, 0.419608)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="SafeSpace" to="." method="_on_safe_space_body_entered"]
+[connection signal="body_exited" from="SafeSpace" to="." method="_on_safe_space_body_exited"]

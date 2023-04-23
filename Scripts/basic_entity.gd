@@ -33,8 +33,7 @@ func player_movement(delta):
 			velocity = Vector2.ZERO
 	else:
 		#speeds player
-		
-		velocity += (input * acceleration* delta)
+		velocity += (input * acceleration * delta)
 		velocity = velocity.limit_length(speed)
 	
 	#print(velocity)

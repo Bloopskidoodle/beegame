@@ -8,11 +8,11 @@
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.4, 0.4)
 
-[node name="NewPlayer" parent="." groups=["players"] instance=ExtResource("1_eri6h")]
+[node name="NewPlayer" parent="." instance=ExtResource("1_eri6h")]
 position = Vector2(-170, 60)
 
 [node name="EnemyBase" parent="." instance=ExtResource("2_n1v4q")]
-position = Vector2(172, -157)
+position = Vector2(592, -366)
 
 [node name="EnemyBase2" parent="." instance=ExtResource("2_n1v4q")]
 position = Vector2(-1146, -476)

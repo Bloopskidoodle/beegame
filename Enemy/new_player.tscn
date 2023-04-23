@@ -8,7 +8,9 @@
 radius = 62.0
 height = 132.0
 
-[node name="NewPlayer" instance=ExtResource("1_h082d")]
+[node name="NewPlayer" groups=["player"] instance=ExtResource("1_h082d")]
+top_level = true
+collision_mask = 0
 script = ExtResource("2_yf3ds")
 
 [node name="Icon" type="Sprite2D" parent="." index="0"]
