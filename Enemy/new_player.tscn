@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0py1l242evj8"]
+
+[ext_resource type="PackedScene" uid="uid://bpbdbfu62rtwp" path="res://Enemy/basic_entity.tscn" id="1_h082d"]
+[ext_resource type="Script" path="res://Enemy/new_player.gd" id="2_semcj"]
+[ext_resource type="Texture2D" uid="uid://1xkd322uvvxb" path="res://icon.svg" id="3_5xq77"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x3ltk"]
+radius = 62.0
+height = 132.0
+
+[node name="NewPlayer" instance=ExtResource("1_h082d")]
+script = ExtResource("2_semcj")
+
+[node name="Icon" type="Sprite2D" parent="." index="0"]
+position = Vector2(1, 0)
+texture = ExtResource("3_5xq77")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CapsuleShape2D_x3ltk")
