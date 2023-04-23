@@ -20,6 +20,8 @@ func _process(delta):
 		
 	if Input.is_action_just_released("test_button"):
 		change_health(-20)
+	#if velocity > Vector2.ZERO:
+	#	print("player is moving")
 
 func _physics_process(delta):
 	if can_move:
