@@ -3,10 +3,18 @@ extends CharacterBody2D
 @export var speed = 300
 @export var damage = 20
 
-signal dmg_signal
+@export var lifespan = 5
+
+var timer = Timer.new()
 
 func _ready():
 	velocity = Vector2(1, 0)
+	
+	timer.timeout.connect(SelfDestruct) 
+	timer.wait_time = lifespan
+	timer.one_shot = true
+	add_child(timer)
+	timer.start()
 
 func _physics_process(delta):
 	move_and_collide(velocity.normalized() * delta * speed)

@@ -12,7 +12,6 @@ func _physics_process(delta):
 func death():
 	arr = [global_position.x, global_position.y]
 	
-	var player = get_parent().get_node("NewPlayer")
 	SignalBus.location.emit(arr)
 	queue_free()
 	
