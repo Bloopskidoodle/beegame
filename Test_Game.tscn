@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://7xxjabhfkahu"]
+[gd_scene load_steps=8 format=3 uid="uid://7xxjabhfkahu"]
 
 [ext_resource type="PackedScene" uid="uid://b2rm4tmnv50bp" path="res://player.tscn" id="1_liw1t"]
 [ext_resource type="PackedScene" uid="uid://bn7dqyt6wene8" path="res://DynamicCamera.tscn" id="2_r15pv"]
 [ext_resource type="PackedScene" uid="uid://6qo7l8ckesk" path="res://Weapon.tscn" id="3_yheao"]
 [ext_resource type="Texture2D" uid="uid://wsmjv68djewr" path="res://Hexagons.png" id="4_fdtyt"]
+[ext_resource type="PackedScene" uid="uid://byv85bsvgyo6s" path="res://Enemy.tscn" id="5_utlac"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_srowd"]
 texture = ExtResource("4_fdtyt")
@@ -43,3 +44,7 @@ position = Vector2(12, 23)
 
 [node name="Weapon" parent="Player" instance=ExtResource("3_yheao")]
 position = Vector2(2.70129, 3.86743)
+
+[node name="Enemy" parent="." instance=ExtResource("5_utlac")]
+position = Vector2(-133, -189)
+scale = Vector2(5, 5)
