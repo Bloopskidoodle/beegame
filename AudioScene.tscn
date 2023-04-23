@@ -1,0 +1,54 @@
+[gd_scene load_steps=15 format=3 uid="uid://eihnlk2cgnnv"]
+
+[ext_resource type="AudioStream" uid="uid://tigdyeq01n07" path="res://SoundEffects/beestep1.mp3" id="1_bhad0"]
+[ext_resource type="Script" path="res://AudioScene.gd" id="1_gxbvg"]
+[ext_resource type="AudioStream" uid="uid://y3c17wlgo7cp" path="res://SoundEffects/beestep2.mp3" id="2_w3tv8"]
+[ext_resource type="AudioStream" uid="uid://ec2vxw6odoq" path="res://SoundEffects/beestep3.mp3" id="3_gsefq"]
+[ext_resource type="AudioStream" uid="uid://cxqgc637lneb4" path="res://SoundEffects/beestep4.mp3" id="4_pb3ni"]
+[ext_resource type="AudioStream" uid="uid://w00oxk5g3rb6" path="res://SoundEffects/hit1.mp3" id="6_jj5eh"]
+[ext_resource type="AudioStream" uid="uid://ctql4lpa1nok3" path="res://SoundEffects/hit2.mp3" id="7_wkqbo"]
+[ext_resource type="AudioStream" uid="uid://cqs0tfs06gaob" path="res://SoundEffects/hit3.mp3" id="8_q04hg"]
+[ext_resource type="AudioStream" uid="uid://bhc5nvlhd0hvs" path="res://SoundEffects/slash1.mp3" id="9_4tcw1"]
+[ext_resource type="AudioStream" uid="uid://bmayqutvent0h" path="res://SoundEffects/slash2.mp3" id="10_0mhn8"]
+[ext_resource type="AudioStream" uid="uid://dkwy67w888eal" path="res://SoundEffects/slash3.mp3" id="11_b87jo"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_duo4o"]
+streams_count = 4
+stream_0/stream = ExtResource("1_bhad0")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("2_w3tv8")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("3_gsefq")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("4_pb3ni")
+stream_3/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_r3727"]
+streams_count = 3
+stream_0/stream = ExtResource("6_jj5eh")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("7_wkqbo")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("8_q04hg")
+stream_2/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hf003"]
+streams_count = 3
+stream_0/stream = ExtResource("9_4tcw1")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("10_0mhn8")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("11_b87jo")
+stream_2/weight = 1.0
+
+[node name="$BeeHitSFX(dot)play <-- code" type="Node2D"]
+script = ExtResource("1_gxbvg")
+
+[node name="BeeStepSFX" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_duo4o")
+
+[node name="BeeHitSFX" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_r3727")
+
+[node name="BeeSlashSFX" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_hf003")
