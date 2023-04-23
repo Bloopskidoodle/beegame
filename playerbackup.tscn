@@ -1,7 +1,7 @@
-[gd_scene load_steps=43 format=3 uid="uid://b4oa7rbayrsut"]
+[gd_scene load_steps=43 format=3 uid="uid://c0jbk3patqt5r"]
 
-[ext_resource type="Texture2D" uid="uid://0cf0mrf5jych" path="res://playermeleemove.png" id="1_ov6mc"]
-[ext_resource type="PackedScene" uid="uid://6qo7l8ckesk" path="res://Weapon.tscn" id="1_s1yf3"]
+[ext_resource type="PackedScene" uid="uid://6qo7l8ckesk" path="res://Weapon.tscn" id="1_d3xxv"]
+[ext_resource type="Texture2D" uid="uid://0cf0mrf5jych" path="res://playermeleemove.png" id="2_oxtt2"]
 
 [sub_resource type="GDScript" id="GDScript_ab2i7"]
 script/source = "extends CharacterBody2D
@@ -561,12 +561,13 @@ script = SubResource("GDScript_ab2i7")
 position = Vector2(0.5, 11)
 shape = SubResource("RectangleShape2D_uhc06")
 
-[node name="Weapon" parent="." instance=ExtResource("1_s1yf3")]
+[node name="Weapon" parent="." instance=ExtResource("1_d3xxv")]
 position = Vector2(2.70129, 3.86743)
+scale = Vector2(1, 1)
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_j05ad")
-texture = ExtResource("1_ov6mc")
+texture = ExtResource("2_oxtt2")
 flip_h = true
 hframes = 8
 vframes = 8
