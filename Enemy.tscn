@@ -1,7 +1,12 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=35 format=3 uid="uid://byv85bsvgyo6s"]
+=======
+[gd_scene load_steps=38 format=3 uid="uid://dsbv50fk0lkvg"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Texture2D" uid="uid://yhgvkii4862b" path="res://beemelee_sheet.png" id="1_l7c75"]
 
+<<<<<<< Updated upstream
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_m728q"]
 animation = &"Idle Left"
 
@@ -65,6 +70,71 @@ blend_point_3/pos = Vector2(0, 1)
 blend_point_4/node = SubResource("AnimationNodeAnimation_6ve1h")
 blend_point_4/pos = Vector2(1, -0.6)
 blend_point_5/node = SubResource("AnimationNodeAnimation_ps830")
+=======
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a31x8"]
+animation = &"Idle Left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s5n1l"]
+animation = &"Idle Right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jtd4g"]
+animation = &"Idle Down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l6jfy"]
+animation = &"Idle Up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8ertm"]
+animation = &"Idle Up Left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_h7d4e"]
+animation = &"Idle Up Right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_vygq1"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_a31x8")
+blend_point_0/pos = Vector2(-0.9, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_s5n1l")
+blend_point_1/pos = Vector2(0.9, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_jtd4g")
+blend_point_2/pos = Vector2(0, 1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_l6jfy")
+blend_point_3/pos = Vector2(0, -1)
+blend_point_4/node = SubResource("AnimationNodeAnimation_8ertm")
+blend_point_4/pos = Vector2(-1, -0.6)
+blend_point_5/node = SubResource("AnimationNodeAnimation_h7d4e")
+blend_point_5/pos = Vector2(1, -0.6)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_eufvx"]
+animation = &"Walk Left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p1wen"]
+animation = &"Walk Right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ygjnr"]
+animation = &"Walk Up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5r352"]
+animation = &"Walk Down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xcvdt"]
+animation = &"Walk Up Right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_njrwa"]
+animation = &"Walk Up Left"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_8ad6s"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_eufvx")
+blend_point_0/pos = Vector2(-0.9, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_p1wen")
+blend_point_1/pos = Vector2(0.9, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_ygjnr")
+blend_point_2/pos = Vector2(0, -1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_5r352")
+blend_point_3/pos = Vector2(0, 1)
+blend_point_4/node = SubResource("AnimationNodeAnimation_xcvdt")
+blend_point_4/pos = Vector2(1, -0.6)
+blend_point_5/node = SubResource("AnimationNodeAnimation_njrwa")
+>>>>>>> Stashed changes
 blend_point_5/pos = Vector2(-1, -0.6)
 blend_mode = 1
 
@@ -413,7 +483,12 @@ _data = {
 [node name="Enemy" type="Node2D"]
 
 [node name="EnemySprite" type="Sprite2D" parent="."]
+<<<<<<< Updated upstream
 texture = ExtResource("1_l7c75")
+=======
+scale = Vector2(1.01511, 1)
+texture = ExtResource("1_3hs0q")
+>>>>>>> Stashed changes
 flip_h = true
 hframes = 8
 vframes = 7

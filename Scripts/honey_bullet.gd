@@ -21,7 +21,6 @@ func _physics_process(delta):
 
 
 func _on_area_2d_body_entered(body):
-	print(body.get_groups())
 	
 	if body.is_in_group("enemy"):
 		body.change_health(-damage)

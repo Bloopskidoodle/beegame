@@ -1,10 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bn7dqyt6wene8"]
+[gd_scene load_steps=2 format=3 uid="uid://bfvcs1djkxv78"]
 
 [ext_resource type="Script" path="res://DynamicCamera.gd" id="1_waqh4"]
 
 [node name="Dynamic Camera" type="Node2D"]
 
 [node name="DynamicCamera" type="Camera2D" parent="."]
+zoom = Vector2(0.8, 0.8)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 script = ExtResource("1_waqh4")
