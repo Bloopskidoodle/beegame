@@ -1,7 +1,7 @@
-[gd_scene load_steps=43 format=3 uid="uid://b4oa7rbayrsut"]
+[gd_scene load_steps=43 format=3 uid="uid://bqp1l8uvudrey"]
 
-[ext_resource type="Texture2D" uid="uid://0cf0mrf5jych" path="res://playermeleemove.png" id="1_ov6mc"]
-[ext_resource type="PackedScene" uid="uid://6qo7l8ckesk" path="res://Weapon.tscn" id="1_s1yf3"]
+[ext_resource type="PackedScene" uid="uid://c8bsc8qjpqrgr" path="res://EnemyWeapon.tscn" id="1_bikf6"]
+[ext_resource type="Texture2D" uid="uid://yhgvkii4862b" path="res://beemelee_sheet.png" id="2_jtklv"]
 
 [sub_resource type="GDScript" id="GDScript_ab2i7"]
 script/source = "extends CharacterBody2D
@@ -24,18 +24,20 @@ func _ready():
 
 func _process(delta):
 	#Player movement paused when the Tab button is pressed
+	\"\"\"
 	if Input.is_action_just_released(\"stop_movement\"):
 		allow_movement()
 		
 	if Input.is_action_just_released(\"test_button\"):
 		change_health(-20)
+	\"\"\"
 	if input == Vector2.ZERO:
 		statemachine.travel(\"Idle\")
 		$PlayerSprite/AnimationTree.set(\"parameters/Idle/blend_position\", get_local_mouse_position().normalized())
 	elif input != Vector2.ZERO:
 		statemachine.travel(\"Walk\")
 		$PlayerSprite/AnimationTree.set(\"parameters/Walk/blend_position\", get_local_mouse_position().normalized())
-
+\"\"\"
 func _physics_process(delta):
 	if can_move:
 		player_movement(delta)
@@ -83,7 +85,7 @@ func change_health(num: int):
 func death():
 	print(\"You are dead!!!!\")
 	
-	
+\"\"\"
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uhc06"]
@@ -553,7 +555,7 @@ _data = {
 "Walk Up Right": SubResource("Animation_5q36g")
 }
 
-[node name="Player" type="CharacterBody2D"]
+[node name="SwordEnemy" type="CharacterBody2D"]
 scale = Vector2(5, 5)
 script = SubResource("GDScript_ab2i7")
 
@@ -561,16 +563,14 @@ script = SubResource("GDScript_ab2i7")
 position = Vector2(0.5, 11)
 shape = SubResource("RectangleShape2D_uhc06")
 
-[node name="Weapon" parent="." instance=ExtResource("1_s1yf3")]
-position = Vector2(2.70129, 3.86743)
-scale = Vector2(1, 1)
+[node name="Weapon" parent="." instance=ExtResource("1_bikf6")]
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_j05ad")
-texture = ExtResource("1_ov6mc")
+texture = ExtResource("2_jtklv")
 flip_h = true
 hframes = 8
-vframes = 8
+vframes = 7
 
 [node name="AnimationTree" type="AnimationTree" parent="PlayerSprite"]
 tree_root = SubResource("AnimationNodeStateMachine_473ng")
