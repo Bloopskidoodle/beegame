@@ -1,19 +1,10 @@
 extends "res://Scripts/basic_entity.gd"
 
-var statemachine
-
 var can_move: bool = true
-var player_has_moved: bool = false
-
-var saved_position
 
 const bulletPath = preload("res://Enemy/honey_bullet.tscn")
 
 func _ready():
-	saved_position = global_position
-	
-	statemachine = $PlayerSprite/AnimationTree.get("parameters/playback")
-	
 	SignalBus.location.connect(_find_location)
 
 func _process(delta):
@@ -25,17 +16,6 @@ func _process(delta):
 		shoot()
 		
 	$Locator.look_at(get_global_mouse_position())
-	
-	if saved_position != global_position:
-		SignalBus.player_location.emit(global_position)
-		saved_position = global_position
-	
-	if input == Vector2.ZERO:
-		statemachine.travel("Idle")
-		$PlayerSprite/AnimationTree.set("parameters/Idle/blend_position", get_local_mouse_position().normalized())
-	elif input != Vector2.ZERO:
-		statemachine.travel("Walk")
-		$PlayerSprite/AnimationTree.set("parameters/Walk/blend_position", get_local_mouse_position().normalized())
 
 func _physics_process(delta):
 	if can_move:
@@ -59,4 +39,3 @@ func shoot():
 	
 	bullet.position = $Locator/Marker2D.global_position
 	bullet.velocity = get_global_mouse_position() - bullet.position
-	
