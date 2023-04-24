@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream
 
 [gd_scene load_steps=7 format=3 uid="uid://6qo7l8ckesk"]
-=======
-[gd_scene load_steps=7 format=3 uid="uid://vkc2hoigsfxx"]
->>>>>>> Stashed changes
 
 [ext_resource type="Script" path="res://Weapon.gd" id="1_if4mn"]
 [ext_resource type="Script" path="res://Item.gd" id="2_53b2b"]
