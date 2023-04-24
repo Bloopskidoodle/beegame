@@ -1,23 +1,13 @@
+<<<<<<< Updated upstream
+
 [gd_scene load_steps=7 format=3 uid="uid://6qo7l8ckesk"]
+=======
+[gd_scene load_steps=7 format=3 uid="uid://vkc2hoigsfxx"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" path="res://Weapon.gd" id="1_if4mn"]
 [ext_resource type="Script" path="res://Item.gd" id="2_53b2b"]
 [ext_resource type="Texture2D" uid="uid://bhpf3psd7q1b4" path="res://playersword.png" id="2_t8ypa"]
-
-[sub_resource type="Animation" id="Animation_8gtu1"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.581554]
-}
 
 [sub_resource type="Animation" id="Animation_t4lrg"]
 resource_name = "swipe"
@@ -35,6 +25,21 @@ tracks/0/keys = {
 "values": [0.581554, 2.92412, 0.581195]
 }
 
+[sub_resource type="Animation" id="Animation_8gtu1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.581554]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2jui8"]
 _data = {
 "RESET": SubResource("Animation_8gtu1"),
@@ -46,8 +51,9 @@ script = ExtResource("1_if4mn")
 
 [node name="Item" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(11, 2)
+position = Vector2(61, 0.999995)
 rotation = 0.581554
+scale = Vector2(5, 5)
 texture = ExtResource("2_t8ypa")
 offset = Vector2(-6.0384, -6.53479)
 script = ExtResource("2_53b2b")

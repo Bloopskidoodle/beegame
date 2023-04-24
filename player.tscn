@@ -1,7 +1,6 @@
-[gd_scene load_steps=43 format=3 uid="uid://b4oa7rbayrsut"]
+[gd_scene load_steps=4 format=3 uid="uid://b4oa7rbayrsut"]
 
-[ext_resource type="Texture2D" uid="uid://0cf0mrf5jych" path="res://playermeleemove.png" id="1_ov6mc"]
-[ext_resource type="PackedScene" uid="uid://6qo7l8ckesk" path="res://Weapon.tscn" id="1_s1yf3"]
+[ext_resource type="Texture2D" uid="uid://1xkd322uvvxb" path="res://icon.svg" id="2_b383k"]
 
 [sub_resource type="GDScript" id="GDScript_ab2i7"]
 script/source = "extends CharacterBody2D
@@ -16,11 +15,8 @@ signal health_updated(health)
 signal health_depleted
 
 var input = Vector2.ZERO
-var statemachine
-var can_move: bool = true
 
-func _ready():
-	statemachine = $PlayerSprite/AnimationTree.get(\"parameters/playback\")
+var can_move: bool = true
 
 func _process(delta):
 	#Player movement paused when the Tab button is pressed
@@ -29,12 +25,6 @@ func _process(delta):
 		
 	if Input.is_action_just_released(\"test_button\"):
 		change_health(-20)
-	if input == Vector2.ZERO:
-		statemachine.travel(\"Idle\")
-		$PlayerSprite/AnimationTree.set(\"parameters/Idle/blend_position\", get_local_mouse_position().normalized())
-	elif input != Vector2.ZERO:
-		statemachine.travel(\"Walk\")
-		$PlayerSprite/AnimationTree.set(\"parameters/Walk/blend_position\", get_local_mouse_position().normalized())
 
 func _physics_process(delta):
 	if can_move:
@@ -87,76 +77,79 @@ func death():
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uhc06"]
+<<<<<<< Updated upstream
+size = Vector2(126, 124)
+=======
 size = Vector2(21, 10)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j05ad"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fshrs"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8tivn"]
 animation = &"Idle Left"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jnb46"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yf22a"]
 animation = &"Idle Right"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bsen3"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xyly6"]
 animation = &"Idle Down"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0td0n"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7ltia"]
 animation = &"Idle Up"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tp50y"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4ssol"]
 animation = &"Idle Up Left"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1rskm"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xul66"]
 animation = &"Idle Up Right"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_vygq1"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_fshrs")
+blend_point_0/node = SubResource("AnimationNodeAnimation_8tivn")
 blend_point_0/pos = Vector2(-0.9, 0)
-blend_point_1/node = SubResource("AnimationNodeAnimation_jnb46")
+blend_point_1/node = SubResource("AnimationNodeAnimation_yf22a")
 blend_point_1/pos = Vector2(0.9, 0)
-blend_point_2/node = SubResource("AnimationNodeAnimation_bsen3")
+blend_point_2/node = SubResource("AnimationNodeAnimation_xyly6")
 blend_point_2/pos = Vector2(0, 1)
-blend_point_3/node = SubResource("AnimationNodeAnimation_0td0n")
+blend_point_3/node = SubResource("AnimationNodeAnimation_7ltia")
 blend_point_3/pos = Vector2(0, -1)
-blend_point_4/node = SubResource("AnimationNodeAnimation_tp50y")
+blend_point_4/node = SubResource("AnimationNodeAnimation_4ssol")
 blend_point_4/pos = Vector2(-1, -0.6)
-blend_point_5/node = SubResource("AnimationNodeAnimation_1rskm")
+blend_point_5/node = SubResource("AnimationNodeAnimation_xul66")
 blend_point_5/pos = Vector2(1, -0.6)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_prsio"]
 animation = &"Not Dead"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_q8or7"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1dbyk"]
 animation = &"Walk Left"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1rma3"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_d0b7u"]
 animation = &"Walk Right"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fwrsq"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3le6o"]
 animation = &"Walk Up"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wquod"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ln1gs"]
 animation = &"Walk Down"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jjr1u"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rb3ps"]
 animation = &"Walk Up Right"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wveas"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_anssr"]
 animation = &"Walk Up Left"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_8ad6s"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_q8or7")
+blend_point_0/node = SubResource("AnimationNodeAnimation_1dbyk")
 blend_point_0/pos = Vector2(-0.9, 0)
-blend_point_1/node = SubResource("AnimationNodeAnimation_1rma3")
+blend_point_1/node = SubResource("AnimationNodeAnimation_d0b7u")
 blend_point_1/pos = Vector2(0.9, 0)
-blend_point_2/node = SubResource("AnimationNodeAnimation_fwrsq")
+blend_point_2/node = SubResource("AnimationNodeAnimation_3le6o")
 blend_point_2/pos = Vector2(0, -1)
-blend_point_3/node = SubResource("AnimationNodeAnimation_wquod")
+blend_point_3/node = SubResource("AnimationNodeAnimation_ln1gs")
 blend_point_3/pos = Vector2(0, 1)
-blend_point_4/node = SubResource("AnimationNodeAnimation_jjr1u")
+blend_point_4/node = SubResource("AnimationNodeAnimation_rb3ps")
 blend_point_4/pos = Vector2(1, -0.6)
-blend_point_5/node = SubResource("AnimationNodeAnimation_wveas")
+blend_point_5/node = SubResource("AnimationNodeAnimation_anssr")
 blend_point_5/pos = Vector2(-1, -0.6)
 blend_mode = 1
 
@@ -552,34 +545,14 @@ _data = {
 "Walk Up Left": SubResource("Animation_bjgus"),
 "Walk Up Right": SubResource("Animation_5q36g")
 }
+>>>>>>> Stashed changes
 
 [node name="Player" type="CharacterBody2D"]
-scale = Vector2(5, 5)
 script = SubResource("GDScript_ab2i7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 11)
+position = Vector2(-1, -1)
 shape = SubResource("RectangleShape2D_uhc06")
 
-[node name="Weapon" parent="." instance=ExtResource("1_s1yf3")]
-position = Vector2(2.70129, 3.86743)
-
-[node name="PlayerSprite" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_j05ad")
-texture = ExtResource("1_ov6mc")
-flip_h = true
-hframes = 8
-vframes = 8
-
-[node name="AnimationTree" type="AnimationTree" parent="PlayerSprite"]
-tree_root = SubResource("AnimationNodeStateMachine_473ng")
-anim_player = NodePath("../AnimationPlayer")
-active = true
-parameters/playback = SubResource("AnimationNodeStateMachinePlayback_d0is3")
-parameters/Idle/blend_position = Vector2(-0.825153, 0.563518)
-parameters/Walk/blend_position = Vector2(-0.0582822, 1.39088)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerSprite"]
-libraries = {
-"": SubResource("AnimationLibrary_r7cao")
-}
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("2_b383k")
